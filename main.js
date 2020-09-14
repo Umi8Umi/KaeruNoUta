@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	    gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
 		osc.connect(gainNode).connect(audioCtx.destination);
 	    osc.start();
-	    gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
 		activeOscillators[key] = osc;
 	    activeGainNodes[key] = gainNode;
 		//allows for polyphony by dividing by number of notes and keeping max gain 1
@@ -73,8 +72,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		for (let val of Object.values(activeGainNodes)){
 			// this line was the one submitted
 			// val.gain.setValueAtTime(gainValue, audioCtx.currentTime);
-			val.gain.setValueAtTime(val.gain.value, audioCtx.currentTime);
-			val.gain.exponentialRampToValueAtTime(gainValue, audioCtx.currentTime + 0.1);
+			val.gain.setTargetAtTime(gainValue, audioCtx.currentTime, 0.1);
+			// val.gain.setValueAtTime(val.gain.value, audioCtx.currentTime);
+			// val.gain.exponentialRampToValueAtTime(gainValue, audioCtx.currentTime + 0.1);
 		}
 	  }
 }, false);
