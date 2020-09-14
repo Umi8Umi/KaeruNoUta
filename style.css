@@ -1,0 +1,37 @@
+body{
+	background-color: #DAF7A6;
+		font-family: "Courier New", Courier, monospace;
+		color: #375500;
+		font-weight: bold;
+}
+h1{
+	text-align: center;
+}
+p{
+	margin: 0;
+	padding: 0;
+}
+img{
+	padding: 15px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width: 150px;
+}
+.selections{
+	padding: 15px;
+	border: dotted;
+	border-width: 5px;
+	border-radius: 10px;
+	border-color: #375500;
+	margin: auto;
+    width: max-content;
+}
+#waveformTitle{
+	margin-bottom: 15px;
+}
+#notes{
+	margin-top: 0; 
+	margin-bottom: 10px;
+	font-family: "Courier New", Courier, monospace;
+}
